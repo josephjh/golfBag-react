@@ -26,7 +26,7 @@ class Pocket extends Component {
         <div>
             <p>{this.state.ball}</p>
             <button onClick={this.addBall}>Add Ball</button>
-            <button onClick={this.lostBall}>I lost Ball</button>
+            <button onClick={this.lostBall}>Foreeeeeee</button>
         </div>
         )
     }

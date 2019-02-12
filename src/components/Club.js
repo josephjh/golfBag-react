@@ -1,20 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-class Club extends Component {
+function Club(props){
     
-
-    render(){
         return (
-        <form onSubmit={(e) => this.props.updater(e, this.props.club.id)}>
-            <input placeholder="Type" name="type" defaultValue={this.props.club.type}/>
-            <input placeholder= "Brand" name="brand" defaultValue={this.props.club.brand}/>
-            <input placeholder="Model" name="model" defaultValue={this.props.club.model}/>
+        <form onSubmit={(e) => props.updater(e, props.club.id)}>
+            <input placeholder="Type" name="type" defaultValue={props.club.type}/>
+            <input placeholder= "Brand" name="brand" defaultValue={props.club.brand}/>
+            <input placeholder="Model" name="model" defaultValue={props.club.model}/>
             <button type="submit">Update</button>
-            <button type="button" onClick={(e) => this.props.eraser(this.props.club.id)}>Delete</button>
+            <button type="button" onClick={(e) => props.eraser( props.club.id)}>Delete</button>
         </form>
         )
     }
-}
 
 export default Club

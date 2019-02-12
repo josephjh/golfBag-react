@@ -3,6 +3,8 @@ import axios from 'axios'
 import './App.css';
 import Club from './components/Club';
 import Pocket from './components/Pocket';
+import Spirit from './components/Spirit'
+
 
 class App extends Component {
   constructor(){
@@ -59,18 +61,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet"></link>
+      <h1>What's in the Bag?</h1>
         <form onSubmit={this.handlePost}>
           <input placeholder="Type" name="type"/>
           <input placeholder= "Brand" name="brand"/>
           <input placeholder="Model" name="model"/>
           <button>Add</button>
+          
         </form>
 
         {this.state.clubs.map((club) => 
         <Club key={club.id} updater={this.handleUpdate} eraser={this.handleDelete} club={club}/>
         )}
         <Pocket/>
-        
+        <h2>My Spirit Golfer</h2>
+
+        <div className="radio">
+          <div>
+            <Spirit/>
+          </div>
+          
+        </div>
       </div>
     );
   }
